@@ -2,6 +2,8 @@
 // Computer Vision
 //---------------------------
 
+System to detect objects based on object features. 
+
 
 To match objects three criteria had to be met:
 	1. Matching # of holes
