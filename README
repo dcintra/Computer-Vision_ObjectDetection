@@ -1,26 +1,18 @@
 //---------------------------
-// Computer Vision: Homework 2, Daniel Ladvocat Cintra
+// Computer Vision
 //---------------------------
 
 
-Challenge 1B:
-I added two other properties other than the ones required: aspect ratio & the number of holes each object has.
-
-Challenge 1C:
-
-Three criteria had to be met:
+To match objects three criteria had to be met:
 	1. Matching # of holes
 	2. Aspect Ratio within +/-10%
 	3. Roundness Ratio within +/-10%
-By adding the "number of holes" property, I was able to quickly disregard objects that didn't match based on this factor alone. If an object had the same amount of holes then it would need to pass the second and third screening process both of which are invariant to rotation and scaling. Should the object be within a 10% difference in aspect ratio and roundness it would then be qualified to be the same. Given more time, I would have added "third-order moments" as described by Hu (1962). 
 
 
-Challenge 2B:
-I chose 800 rho bins and 180 such that I would end up with a range of -800:+800 rho values and -180:+180 degrees. I based my decision on 800 due to the image size. Since all three images were around 640x480 this would account for the highest rho value. After testing several different resolutions the results were promising given these settings. 
+I chose 800 rho bins and 180 such that I would end up with a range of -800:+800 rho values and -180:+180 degrees. 
 
 
-Challenge 2C:
-I chose to use a standard threshold and simply filtered anything that not within the 90th, 30th & 40th percentile for hough1/2/3 respectively. 
+Standard threshold for Hough: simply filtered anything that not within the 90th, 30th & 40th percentile for hough1/2/3 respectively. 
 
-Challenge 2D:
+Line Segments:
 The key to my algorithm was to compute the line and then check whether all the points on the line had been detected by the edge detector. If a point was present in the edge detected image that meant that i'd include it as a point in my line. In a second step, once points were added to line segment matrices to be plotted; I would keep track of the distances between the points. If the distance between points passed a certain threshold, I'd start a new line segment. 
